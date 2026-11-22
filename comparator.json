@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "HypercubeChallenge.theorem1_f_lower_bound_nat",
+    "HypercubeChallenge.theorem5_asymptotic_three_halves",
+    "HypercubeChallenge.f_five_bounds",
+    "HypercubeChallenge.f_six_ge_76",
+    "HypercubeChallenge.f_seven_ge_150",
+    "HypercubeChallenge.f_eight_ge_294",
+    "HypercubeChallenge.theorem14_bounds_17_to_32"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

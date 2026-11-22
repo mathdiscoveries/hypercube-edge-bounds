@@ -1,0 +1,125 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Lower Bounds on Diameter-Preserving Spanning Subgraphs of the Hypercube"
+  description: >-
+    Unconditional Lean 4 + Mathlib formalization for Graham's hypercube
+    diameter-preserving spanning subgraph problem: proves the universal lower
+    bound 2^n + ceil((2^n - 2n)/(n - 1)) <= f(n) for all n >= 2, raises the
+    asymptotic second-term coefficient to 3/2 on the scale 2^n/(n - 1), and
+    certifies 39 <= f(5) <= 40, f(6) >= 76, f(7) >= 150, f(8) >= 294,
+    and improved lower bounds through dimension n = 32.
+  authors:
+    - "Tyler Hughes"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Tyler Hughes"
+
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05C35", "05C12"]
+
+sources:
+  - title: "Lower bounds on diameter-preserving spanning subgraphs of the hypercube"
+    type: original-proof
+    relationship: other
+    note: >-
+      Distance-ball excess bounds, asymptotic 3/2 theorem, and finite-dimension
+      certificates discovered and formalized in Lean 4 by AI research agents
+      built and directed by Tyler Hughes; accompanying unrefereed manuscript at
+      mathdiscoveries.org.
+  - title: "Edge deletion preserving the diameter of the hypercube"
+    authors:
+      - "Abdelaziz Bouabdallah"
+      - "Charles Delorme"
+      - "S. Djelloul"
+    id: "https://doi.org/10.1016/0166-218X(95)00023-K"
+    type: paper
+    location: "Discrete Applied Mathematics 63 (1995), 91-95"
+    relationship: background
+    note: "Establishes the classical lower bound improved here for all n >= 4."
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Unconditionally proved in Lean 4 + Mathlib with standard axioms only (zero
+    sorry, zero native_decide): universal lower bound for all n >= 2, asymptotic
+    3/2 excess bound, 39 <= f(5) <= 40, f(6) >= 76, f(7) >= 150,
+    f(8) >= 294, and certified lower bounds for dimensions 17 through 32.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+
+automation:
+  methods:
+    - method: agent
+      models: []
+      framework: "AI research agent pipeline built and directed by Tyler Hughes"
+      tool_setup: >-
+        Autonomous builder, adversarial falsifier, and reviewer agents
+        discovered the bounds and formalized them in Lean 4 + Mathlib.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "Goal-directed mathematical discovery and Lean 4 formalization."
+  spend_usd: "not tracked"
+  notes: >-
+    All proofs and Lean 4 formalizations were produced by AI research agents
+    built and directed by Tyler Hughes. No human mathematician has yet refereed
+    the proof.
+
+fidelity:
+  divergences: ""
+
+review:
+  status: agent-reviewed
+  reviewers:
+    - "Internal adversarial falsifier and reviewer agents"
+  notes: >-
+    Checked by separate internal falsifier and reviewer agents and audited for
+    standard axioms only via Hypercube/Verify.lean. Not yet refereed by a human
+    mathematician.
+
+alignment:
+  namespace: "HypercubeChallenge"
+  statements:
+    - source: "Universal lower bound for all n >= 2"
+      lean: "HypercubeChallenge.theorem1_f_lower_bound_nat"
+      module: "Challenge"
+      status: proved
+      note: "Proves 2^n + ceil((2^n - 2n)/(n - 1)) <= f(n)."
+    - source: "Asymptotic 3/2 excess bound"
+      lean: "HypercubeChallenge.theorem5_asymptotic_three_halves"
+      module: "Challenge"
+      status: proved
+      note: "Lim inf of (f(n) - 2^n)*(n - 1)/2^n >= 3/2."
+    - source: "Dimension 5 bounds 39 <= f(5) <= 40"
+      lean: "HypercubeChallenge.f_five_bounds"
+      module: "Challenge"
+      status: proved
+      note: "Rules out 38 edges in Q_5."
+    - source: "Dimension 6 lower bound f(6) >= 76"
+      lean: "HypercubeChallenge.f_six_ge_76"
+      module: "Challenge"
+      status: proved
+      note: "Kernel-checked integer certificate."
+    - source: "Dimension 7 lower bound f(7) >= 150"
+      lean: "HypercubeChallenge.f_seven_ge_150"
+      module: "Challenge"
+      status: proved
+      note: "Kernel-checked three-radius certificate."
+    - source: "Dimension 8 lower bound f(8) >= 294"
+      lean: "HypercubeChallenge.f_eight_ge_294"
+      module: "Challenge"
+      status: proved
+      note: "Kernel-checked integer certificate."
+    - source: "Certified lower bounds for dimensions 17 through 32"
+      lean: "HypercubeChallenge.theorem14_bounds_17_to_32"
+      module: "Challenge"
+      status: proved
+      note: "Kernel-checked certificates for 17 <= n <= 32."
+
+acknowledgements: "Built on Lean 4 and Mathlib."
