@@ -4,12 +4,17 @@ version: "v0.4"
 project:
   name: "Lower Bounds on Diameter-Preserving Spanning Subgraphs of the Hypercube"
   description: >-
-    Unconditional Lean 4 + Mathlib formalization for Graham's hypercube
-    diameter-preserving spanning subgraph problem: proves the universal lower
-    bound 2^n + ceil((2^n - 2n)/(n - 1)) <= f(n) for all n >= 2, raises the
-    asymptotic second-term coefficient to 3/2 on the scale 2^n/(n - 1), and
-    certifies 39 <= f(5) <= 40, f(6) >= 76, f(7) >= 150, f(8) >= 294,
-    and improved lower bounds through dimension n = 32.
+    Unconditional Lean 4 + Mathlib formalization for Graham and Harary's
+    hypercube diameter-preserving spanning subgraph problem: proves the
+    universal lower bound 2^n + ceil((2^n - 2n)/(n - 1)) <= f(n) for all
+    n >= 2, raises the asymptotic second-term coefficient to 3/2 on the scale
+    2^n/(n - 1), and certifies 39 <= f(5) <= 40, f(6) >= 76, f(7) >= 150,
+    f(8) >= 294, and improved lower bounds through dimension n = 32. Companion
+    write-up and prior-work search log (including Google Scholar sweep on
+    2026-11-22) are published at
+    https://mathdiscoveries.org/results/hypercube-edge-bounds; no priority is
+    claimed over unread sources (the full body of Bouabdallah-Delorme-Djelloul
+    1995 and Djelloul's 1993 thesis could not be accessed).
   authors:
     - "Tyler Hughes"
   license: "Apache-2.0"
@@ -22,13 +27,28 @@ classification:
 
 sources:
   - title: "Lower bounds on diameter-preserving spanning subgraphs of the hypercube"
+    authors:
+      - "Tyler Hughes"
+    id: "https://mathdiscoveries.org/results/hypercube-edge-bounds"
     type: original-proof
+    location: "Companion page, verification archive, and prior-work search log at https://mathdiscoveries.org/results/hypercube-edge-bounds"
     relationship: other
     note: >-
       Distance-ball excess bounds, asymptotic 3/2 theorem, and finite-dimension
       certificates discovered and formalized in Lean 4 by AI research agents
-      built and directed by Tyler Hughes; accompanying unrefereed manuscript at
-      mathdiscoveries.org.
+      built and directed by Tyler Hughes. Logged searches across the 1992-2024
+      literature and a 5-query Google Scholar sweep (2026-11-22) did not turn
+      up a stronger lower bound on f(n), while the full body of
+      Bouabdallah-Delorme-Djelloul (1995) and Djelloul's (1993) thesis remain
+      unread; no unconditional priority is claimed.
+  - title: "Changing and unchanging the diameter of a hypercube"
+    authors:
+      - "Niall Graham"
+      - "Frank Harary"
+    type: paper
+    location: "Discrete Applied Mathematics 37/38 (1992), 265-274"
+    relationship: background
+    note: "Introduces the diameter-preserving edge-deletion problem on Q_n."
   - title: "Edge deletion preserving the diameter of the hypercube"
     authors:
       - "Abdelaziz Bouabdallah"
@@ -38,7 +58,18 @@ sources:
     type: paper
     location: "Discrete Applied Mathematics 63 (1995), 91-95"
     relationship: background
-    note: "Establishes the classical lower bound improved here for all n >= 4."
+    note: "Establishes the classical lower bound on f(n); full body of the 1995 paper was paywalled and unread."
+  - title: "Bounded Degree Spanners of the Hypercube"
+    authors:
+      - "Rajko Nenadov"
+      - "Mehtaab Sawhney"
+      - "Benny Sudakov"
+      - "Adam Zsolt Wagner"
+    id: "https://arxiv.org/abs/1910.09868"
+    type: paper
+    location: "arXiv:1910.09868 (2019)"
+    relationship: background
+    note: "Related hypercube spanner bounds consulted in the prior-work check (also PatternBoost, arXiv:2411.00566, Section 3.3)."
 
 related_formalizations: []
 
@@ -80,8 +111,8 @@ review:
     - "Internal adversarial falsifier and reviewer agents"
   notes: >-
     Checked by separate internal falsifier and reviewer agents and audited for
-    standard axioms only via Hypercube/Verify.lean. Not yet refereed by a human
-    mathematician.
+    standard axioms only via Hypercube/Verify.lean. Not yet refereed by a
+    human mathematician.
 
 alignment:
   namespace: "HypercubeChallenge"
