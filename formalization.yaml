@@ -16,10 +16,10 @@ project:
     claimed over unread sources (the full body of Bouabdallah-Delorme-Djelloul
     1995 and Djelloul's 1993 thesis could not be accessed).
   authors:
-    - "Tyler Hughes"
+    - "Tyler B. Hughes"
   license: "Apache-2.0"
   responsible_maintainers:
-    - "Tyler Hughes"
+    - "Tyler B. Hughes"
 
 classification:
   arxiv: ["math.CO"]
@@ -28,7 +28,7 @@ classification:
 sources:
   - title: "Lower bounds on diameter-preserving spanning subgraphs of the hypercube"
     authors:
-      - "Tyler Hughes"
+      - "Tyler B. Hughes"
     id: "https://mathdiscoveries.org/results/hypercube-edge-bounds"
     type: original-proof
     location: "Companion page, verification archive, and prior-work search log at https://mathdiscoveries.org/results/hypercube-edge-bounds"
@@ -36,7 +36,7 @@ sources:
     note: >-
       Distance-ball excess bounds, asymptotic 3/2 theorem, and finite-dimension
       certificates discovered and formalized in Lean 4 by AI research agents
-      built and directed by Tyler Hughes. Logged searches across the 1992-2024
+      built and directed by Tyler B. Hughes. Logged searches across the 1992-2024
       literature and a 5-query Google Scholar sweep (2026-11-22) did not turn
       up a stronger lower bound on f(n), while the full body of
       Bouabdallah-Delorme-Djelloul (1995) and Djelloul's (1993) thesis remain
@@ -87,7 +87,7 @@ automation:
   methods:
     - method: agent
       models: []
-      framework: "AI research agent pipeline built and directed by Tyler Hughes"
+      framework: "AI research agent pipeline built and directed by Tyler B. Hughes"
       tool_setup: >-
         Autonomous builder, adversarial falsifier, and reviewer agents
         discovered the bounds and formalized them in Lean 4 + Mathlib.
@@ -99,7 +99,7 @@ automation:
   spend_usd: "not tracked"
   notes: >-
     All proofs and Lean 4 formalizations were produced by AI research agents
-    built and directed by Tyler Hughes. No human mathematician has yet refereed
+    built and directed by Tyler B. Hughes. No human mathematician has yet refereed
     the proof.
 
 fidelity:
