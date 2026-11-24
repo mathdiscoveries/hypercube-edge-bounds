@@ -1,0 +1,41 @@
+{
+  "creators": [
+    {
+      "name": "Hughes, Tyler B.",
+      "orcid": "0000-0001-6221-9014"
+    }
+  ],
+  "title": "Lower Bounds on Diameter-Preserving Spanning Subgraphs of the Hypercube",
+  "description": "Unconditional Lean 4 + Mathlib formalization for Graham and Harary's hypercube diameter-preserving spanning subgraph problem: proves the universal lower bound 2^n + ceil((2^n - 2n)/(n - 1)) <= f(n) for all n >= 2, raises the asymptotic second-term coefficient to 3/2 on the scale 2^n/(n - 1), and certifies 39 <= f(5) <= 40, f(6) >= 76, f(7) >= 150, f(8) >= 294, and improved lower bounds through dimension n = 32. Companion write-up and prior-work search log (including Google Scholar sweep on 2026-11-22) are published at https://mathdiscoveries.org/results/hypercube-edge-bounds; no priority is claimed over unread sources (the full body of Bouabdallah-Delorme-Djelloul 1995 and Djelloul's 1993 thesis could not be accessed). Generated and checked by AI research agents built and directed by Tyler B. Hughes. No human mathematician has yet refereed the proof.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "apache-2.0",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "formalized mathematics",
+    "theorem proving",
+    "combinatorics",
+    "math.CO",
+    "MSC 2020: 05C35",
+    "MSC 2020: 05C12"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://mathdiscoveries.org/results/hypercube-edge-bounds",
+      "relation": "isSupplementTo",
+      "resource_type": "other"
+    },
+    {
+      "identifier": "https://doi.org/10.1016/0166-218X(95)00023-K",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/1910.09868",
+      "relation": "references",
+      "resource_type": "publication-preprint"
+    }
+  ],
+  "notes": "Unrefereed. Generated and checked by AI research agents built and directed by Tyler B. Hughes."
+}
