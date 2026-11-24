@@ -1,5 +1,7 @@
 # Lower Bounds on Diameter-Preserving Spanning Subgraphs of the Hypercube
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24490749.svg)](https://doi.org/10.5281/zenodo.24490749)
+
 Unconditional Lean 4 (`v4.35.0`) + Mathlib formalization for Graham's hypercube
 diameter problem ($f(n)$ = minimum edges in a spanning subgraph of $Q_n$ of
 diameter $n$):
