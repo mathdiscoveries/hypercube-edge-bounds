@@ -26,21 +26,28 @@ classification:
   msc2020: ["05C35", "05C12"]
 
 sources:
-  - title: "Lower bounds on diameter-preserving spanning subgraphs of the hypercube"
+  - title: "How Few Edges Preserve a Hypercube's Diameter? Exact Conservation Laws and Kernel-Checked Bounds"
     authors:
       - "Tyler B. Hughes"
     id: "https://mathdiscoveries.org/results/hypercube-edge-bounds"
-    type: original-proof
-    location: "Companion page, verification archive, and prior-work search log at https://mathdiscoveries.org/results/hypercube-edge-bounds"
-    relationship: other
+    type: paper
+    location: "https://mathdiscoveries.org/results/hypercube-edge-bounds"
+    relationship: formalizes
+    author_endorsement: participated
     note: >-
-      Distance-ball excess bounds, asymptotic 3/2 theorem, and finite-dimension
-      certificates discovered and formalized in Lean 4 by AI research agents
-      built and directed by Tyler B. Hughes. Logged searches across the 1992-2024
+      The companion paper. It states and proves in writing every compared
+      statement of this package (Theorems 1, 3, 9 and 11, Propositions 12 and
+      13), and the Lean work formalizes them; the formalization presents no
+      result that the paper does not. The finite certificates behind
+      f(6) >= 76 and f(8) >= 294 (Proposition 12) and the bounds for
+      17 <= n <= 32 (Theorem 11) are stated and explained in the paper and are
+      evaluated in the Lean kernel here. Logged searches across the 1992-2024
       literature and a 5-query Google Scholar sweep (2026-11-22) did not turn
-      up a stronger lower bound on f(n), while the full body of
-      Bouabdallah-Delorme-Djelloul (1995) and Djelloul's (1993) thesis remain
-      unread; no unconditional priority is claimed.
+      up a stronger lower bound on f(n); the full body of Bouabdallah, Delorme
+      and Djelloul (1995), its 1990 Orsay report and Djelloul's 1993 thesis
+      remain unread [to check], so no priority is claimed over them. AI
+      research agents built and directed by Tyler B. Hughes generated and
+      checked this work. No human mathematician has yet refereed the proof.
   - title: "Changing and unchanging the diameter of a hypercube"
     authors:
       - "Niall Graham"
@@ -111,8 +118,8 @@ review:
     - "Internal adversarial falsifier and reviewer agents"
   notes: >-
     Checked by separate internal falsifier and reviewer agents and audited for
-    standard axioms only via Hypercube/Verify.lean. Not yet refereed by a
-    human mathematician.
+    standard axioms only via Hypercube/Verify.lean. No human mathematician
+    has yet refereed the proof.
 
 alignment:
   namespace: "HypercubeChallenge"
