@@ -6,20 +6,21 @@ project:
   description: >-
     Unconditional Lean 4 + Mathlib formalization for Graham and Harary's
     hypercube diameter-preserving spanning subgraph problem: proves the
-    universal lower bound 2^n + ceil((2^n - 2n)/(n - 1)) <= f(n) for all
-    n >= 2, raises the asymptotic second-term coefficient to 3/2 on the scale
-    2^n/(n - 1), and certifies 39 <= f(5) <= 40, f(6) >= 76, f(7) >= 150,
-    f(8) >= 294, and lower bounds for every dimension 17 <= n <= 32. Coverage
-    by this package's Palomar comparison: of the companion paper's 14 main
+    universal lower bound 2^n + ceil((2^n - 2n)/(n - 1)) <= f(n) for all n >=
+    2, raises the asymptotic second-term coefficient to 3/2 on the scale
+    2^n/(n - 1), and certifies 39 <= f(5) <= 40, f(6) >= 76, f(7) >= 150, f(8)
+    >= 294, and lower bounds for every dimension 17 <= n <= 32. Coverage by
+    this package's Palomar comparison: of the companion paper's 14 main
     results, 5 are compared in Lean in full (36%; Theorems 1, 3, 9 and 11 and
-    Proposition 13) and 1 in part (Proposition 12: its instances
-    f(6) >= 76 and f(8) >= 294, not its general certificate bridge); 7 more
-    (Corollary 2, Proposition 4, Lemma 5, Theorem 6 and Propositions 7, 8
-    and 10) are proved in this package's Lean library but not compared;
-    Proposition 14 is by certificate only; Conjecture 15 is open and not
-    counted. Companion
-    write-up and prior-work search log (including Google Scholar sweep on
-    2026-11-22) are published at
+    Proposition 13) and 1 in part (Proposition 12: its instances f(6) >= 76
+    and f(8) >= 294, not its general certificate bridge); 7 more (Corollary 2,
+    Proposition 4, Lemma 5, Theorem 6 and Propositions 7, 8 and 10) are proved
+    in this package's Lean library but not compared; Proposition 14 is outside
+    this comparison (the Lean library rules out valid 19-edge subgraphs of
+    Q_4; its count of 8,320 labelled 20-edge graphs in 30 classes is by
+    external enumeration only); Conjecture 15 is open and not counted.
+    Companion write-up and prior-work search log (including Google Scholar
+    sweep on 2026-11-22) are published at
     https://mathdiscoveries.org/results/hypercube-edge-bounds; no priority is
     claimed over unread sources (the full body of Bouabdallah-Delorme-Djelloul
     1995 and Djelloul's 1993 thesis could not be accessed).
@@ -72,8 +73,31 @@ sources:
     id: "https://doi.org/10.1016/0166-218X(95)00023-K"
     type: paper
     location: "Discrete Applied Mathematics 63 (1995), 91-95"
-    relationship: background
-    note: "Establishes the classical lower bound on f(n); full body of the 1995 paper was paywalled and unread."
+    relationship: independently-proves
+    note: >-
+      Credited, through the full text of Wang, Ho, Ferrero and Sung (2008,
+      Section 1.2) that the companion paper cites, with the classical upper
+      bound 2^n + C(n, floor(n/2)) - 2; at n = 5 this is the upper half
+      f(5) <= 40 of the compared theorem f_five_bounds, which this package
+      proves by specializing that construction. It also gives the
+      classical lower bound that the compared lower bounds improve. The full
+      body of the 1995 paper was paywalled and is unread [to check].
+  - title: "Hypercube subgraphs with minimal detours"
+    authors:
+      - "Pál Erdős"
+      - "Peter Hamburger"
+      - "Raymond E. Pippert"
+      - "William D. Weakley"
+    type: paper
+    location: "Journal of Graph Theory 23(2) (1996), 119-128"
+    relationship: independently-proves
+    note: >-
+      Nenadov, Sawhney, Sudakov and Wagner (2019, Section 4) attribute the
+      edge-minimization question and the construction with
+      2^n + C(n, floor(n/2)) - 2 edges to this paper; at n = 5 that
+      construction gives the upper half f(5) <= 40 of the compared theorem
+      f_five_bounds. Credited through that secondary source; this paper
+      itself is unread [to check].
   - title: "Bounded Degree Spanners of the Hypercube"
     authors:
       - "Rajko Nenadov"
@@ -105,7 +129,9 @@ automation:
       framework: "AI research agent pipeline built and directed by Tyler B. Hughes"
       tool_setup: >-
         Autonomous builder, adversarial falsifier, and reviewer agents
-        discovered the bounds and formalized them in Lean 4 + Mathlib.
+        found and proved the lower bounds and formalized them in Lean 4 +
+        Mathlib, together with the classical upper-bound construction behind
+        f(5) <= 40.
       cost:
         wall_time: "not tracked"
         spend_usd: "not tracked"
@@ -125,9 +151,13 @@ review:
   reviewers:
     - "Internal adversarial falsifier and reviewer agents"
   notes: >-
-    Checked by separate internal falsifier and reviewer agents and audited for
-    standard axioms only via Hypercube/Verify.lean. No human mathematician
-    has yet refereed the proof.
+    Checked by separate internal falsifier and reviewer agents. The axiom
+    audit Hypercube/Verify.lean prints the axioms of the Defs, Theorem1,
+    Construction, SmallDims and StrongerBounds modules (standard axioms only);
+    the three compared bounds proved in the Seven and SmallCertificates
+    modules are outside that file, and comparator.json restricts all seven
+    compared theorems to the standard axioms. No human mathematician has yet
+    refereed the proof.
 
 alignment:
   namespace: "HypercubeChallenge"
