@@ -67,7 +67,7 @@ sources:
     note: "Introduces the diameter-preserving edge-deletion problem on Q_n."
   - title: "Edge deletion preserving the diameter of the hypercube"
     authors:
-      - "Abdelaziz Bouabdallah"
+      - "A. Bouabdallah"
       - "Charles Delorme"
       - "S. Djelloul"
     id: "https://doi.org/10.1016/0166-218X(95)00023-K"
@@ -107,8 +107,14 @@ sources:
     id: "https://arxiv.org/abs/1910.09868"
     type: paper
     location: "arXiv:1910.09868 (2019)"
-    relationship: background
-    note: "Related hypercube spanner bounds consulted in the prior-work check (also PatternBoost, arXiv:2411.00566, Section 3.3)."
+    relationship: independently-proves
+    note: >-
+      Section 4 proves an Omega(2^n / n) lower bound on f(n) - 2^n (read in
+      full). The compared theorems independently give a bound of this order:
+      theorem1_f_lower_bound_nat for every n >= 2, and
+      theorem5_asymptotic_three_halves, which raises the coefficient to a lim
+      inf of at least 3/2 on the scale 2^n / (n - 1). Also consulted in the
+      prior-work check, with PatternBoost (arXiv:2411.00566, Section 3.3).
 
 related_formalizations: []
 
